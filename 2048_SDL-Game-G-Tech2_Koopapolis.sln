@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2048_SDL-Game-G-Tech2_Koopapolis", "2048_SDL-Game-G-Tech2_Koopapolis.vcxproj", "{ED39F3AF-2084-49D3-884C-5224ABE31786}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED39F3AF-2084-49D3-884C-5224ABE31786}.Debug|x64.ActiveCfg = Debug|x64
+		{ED39F3AF-2084-49D3-884C-5224ABE31786}.Debug|x64.Build.0 = Debug|x64
+		{ED39F3AF-2084-49D3-884C-5224ABE31786}.Debug|x86.ActiveCfg = Debug|Win32
+		{ED39F3AF-2084-49D3-884C-5224ABE31786}.Debug|x86.Build.0 = Debug|Win32
+		{ED39F3AF-2084-49D3-884C-5224ABE31786}.Release|x64.ActiveCfg = Release|x64
+		{ED39F3AF-2084-49D3-884C-5224ABE31786}.Release|x64.Build.0 = Release|x64
+		{ED39F3AF-2084-49D3-884C-5224ABE31786}.Release|x86.ActiveCfg = Release|Win32
+		{ED39F3AF-2084-49D3-884C-5224ABE31786}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ADDBCD77-76EC-4DD4-A243-4C4ED3867E45}
+	EndGlobalSection
+EndGlobal
