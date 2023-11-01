@@ -19,6 +19,7 @@ int	main(int argc, char** argv)
 			//SDL_Delay(1000 / window.fpsmax - (SDL_GetTicks() - starting_tick));
 		SDL_RenderPresent(window.renderer);
 		std::cout << window.GetFps() << std::endl;
+
 	}
 	return 0;
 }

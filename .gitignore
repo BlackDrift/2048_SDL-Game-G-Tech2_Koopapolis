@@ -39,5 +39,6 @@ Thumbs.db
 
 # ignore all x64 possible files #
 x64/
+x64/Debug
 # and .vs ones #
 .vs/

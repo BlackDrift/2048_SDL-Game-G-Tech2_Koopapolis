@@ -1,16 +1,17 @@
-#pragma once
+#pragma once	
+#include "SDL_Rect.h"
 struct SDL_Renderer;
-struct SDL_Rect;
 struct SDL_Texture;
 
 class GameObject {
 
 public:
 	GameObject(const char* texturesheet, SDL_Renderer* ren);
+	
 	~GameObject();
 	
-	//void Update();
-	//void Render();
+	void Update();
+	void Render();
 
 private:
 	int xpos;
