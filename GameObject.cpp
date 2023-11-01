@@ -6,8 +6,8 @@ GameObject::GameObject(const char* texturesheet, SDL_Renderer* ren)
 {
 	renderer = ren;
 	//objTexture = TextureManager::LoadTexture(texturesheet, ren);
-	TextureManager a();
-	a.f();
+	//TextureManager a();
+	//a.f();
 
 }
 
