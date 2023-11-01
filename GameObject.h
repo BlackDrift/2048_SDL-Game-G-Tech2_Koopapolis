@@ -21,3 +21,25 @@ private:
 	SDL_Rect srcRect, destRect;
 	SDL_Renderer* renderer;
 };
+
+class Tile //: GameObject
+{
+public:
+	//Attributes
+	int	value;
+	int pos;
+	int x;
+	int y;
+
+	//Constructor
+	Tile();
+
+	//Method
+	int GetNumber();
+	void Evolve();
+	void Reset();
+
+
+	//Destructor
+	~Tile();
+};

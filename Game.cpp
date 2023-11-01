@@ -1,13 +1,12 @@
  #include "Map.h"
 #include "Game.h"
+#include <SDL.h>
 
-// Arrow keys + escape
-
-#define KEY_UP 72
-#define KEY_DOWN 80
-#define KEY_LEFT 75
-#define KEY_RIGHT 77
-#define KEY_ESC 27
+#define KEY_UP SDLK_UP
+#define KEY_DOWN SDLK_DOWN
+#define KEY_LEFT SDLK_LEFT
+#define KEY_RIGHT SDLK_RIGHT
+#define KEY_ESC SDLK_ESCAPE
 
 int	game::GameEvent(int	key, Map *map)
 {

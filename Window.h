@@ -13,10 +13,6 @@ private:
 	int				height;
 	const char*		title;
 
-	Uint32			frame_tick;
-	float			fps;
-	float			fpsmax;
-
 public:
 
 	int				x;
@@ -25,6 +21,9 @@ public:
 	Map*			content;
 
 	Uint32			starting_tick;
+	Uint32			frame_tick;
+	float			fps;
+	float			fpsmax;
 
 	SDL_Window*		window;
 	SDL_Renderer*	renderer;

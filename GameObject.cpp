@@ -1,6 +1,7 @@
 #include "GameObject.h"
 #include "TextureManager.h"
 #include <SDL.h>
+#include <cstdlib>
 
 GameObject::GameObject(const char* texturesheet, SDL_Renderer* ren)
 {
@@ -30,4 +31,30 @@ void GameObject::Update()
 void GameObject::Render()
 {
 	//SDL_RenderCopy(renderer, objTexture, &srcRect, &destRect);
+}
+
+Tile::Tile()
+{
+	this->value = GetNumber();
+}
+
+int Tile::GetNumber()
+{
+	int value = (rand() % 2 + 1) * 2;
+	return value;
+}
+
+void Tile::Evolve()
+{
+	this->value = this->value * 2;
+}
+
+void Tile::Reset()
+{
+	this->value = 0;
+}
+
+Tile::~Tile()
+{
+
 }
