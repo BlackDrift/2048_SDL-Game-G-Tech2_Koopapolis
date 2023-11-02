@@ -25,9 +25,10 @@ private:
 
 class Tile : GameObject
 {
+private:
+	int				value;
 public:
 	//Attributes
-	int				value;
 	int				pos;
 	int				x;
 	int				y;
@@ -39,10 +40,11 @@ public:
 	Tile(SDL_Renderer* renderer);
 
 	//Method
-	int				GetNumber();
 	void			Evolve();
 	void			Reset();
 	void			Swap(Tile* tile);
+	int				GetValue();
+	void			SetValue(int value);
 
 
 	//Destructor

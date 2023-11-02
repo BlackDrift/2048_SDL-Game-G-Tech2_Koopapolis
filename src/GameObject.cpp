@@ -27,6 +27,7 @@ SDL_Surface* GameObject::GetSurface(int value)
 	{
 	case(0):
 		this->surface = SDL_LoadBMP(IMG_PATH_DEFAULT);
+		break;
 	case (2):
 		this->surface = SDL_LoadBMP(IMG_PATH_2);
 		break;
@@ -88,29 +89,32 @@ GameObject::~GameObject()
 
 Tile::Tile(SDL_Renderer* renderer) : GameObject(renderer)
 {
-	this->value = GetNumber();
+	this->value = 0;
 	this->renderer = renderer;
 	this->surface = this->GetSurface(this->value);
 	this->objTexture = this->GetText();
 }
 
-int Tile::GetNumber()
+int	Tile::GetValue()
 {
-	int value = (rand() % 2 + 1) * 2;
-	return value;
+	return (this->value);
+}
+
+void Tile::SetValue(int value)
+{
+	this->value = value;
+	this->GetSurface(value);
+	this->GetText();
 }
 
 void Tile::Evolve()
 {
-	this->value = this->value * 2;
-	this->GetSurface(this->value);
-	this->GetText();
+	this->SetValue(value * 2);
 }
 
 void Tile::Reset()
 {
-	this->value = 0;
-	this->GetSurface(this->value);
+	this->SetValue(0);
 }
 
 Tile::~Tile()

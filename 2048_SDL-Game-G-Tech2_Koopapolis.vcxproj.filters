@@ -73,5 +73,8 @@
     <Image Include="rsrc\2048.bmp">
       <Filter>Fichiers de ressources</Filter>
     </Image>
+    <Image Include="rsrc\default.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
   </ItemGroup>
 </Project>
