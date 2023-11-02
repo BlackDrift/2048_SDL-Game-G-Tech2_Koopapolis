@@ -1,4 +1,4 @@
-#pragma once	
+#pragma once
 #include "SDL_Rect.h"
 struct SDL_Renderer;
 struct SDL_Texture;
@@ -12,12 +12,12 @@ public:
 	SDL_Surface*	surface;
 
 	GameObject(SDL_Renderer* ren);
-	
-	
+
+
 	~GameObject();
 
-	void			GetSurface(int value);
-	void			GetText();
+	SDL_Surface*	GetSurface(int value);
+	SDL_Texture*	GetText();
 
 private:
 	SDL_Texture*		texture;
@@ -42,6 +42,7 @@ public:
 	int				GetNumber();
 	void			Evolve();
 	void			Reset();
+	void			Swap(Tile* tile);
 
 
 	//Destructor

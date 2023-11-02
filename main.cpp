@@ -12,8 +12,6 @@ int	main(int argc, char** argv)
 	srand((unsigned int)time(0));;
 	Window	window;
 
-	window.map->SpawnTile();
-	window.map->SpawnTile();
 	while (window.running)
 	{
 		window.starting_tick = SDL_GetTicks();
@@ -33,13 +31,13 @@ int	main(int argc, char** argv)
 			}
 			window.Update();
 			Sleep(100);
-
 			break;
 		}
-		SDL_GetWindowPosition(window.window, &window.x, &window.y);
+		//std::cout << window.map->mContent.at(3).value << std::endl;
+		//SDL_GetWindowPosition(window.window, &window.x, &window.y);
 		//if ((1000 / window.fpsmax) > SDL_GetTicks() - window.starting_tick)
 			//SDL_Delay(1000 / window.fpsmax - (SDL_GetTicks() - window.starting_tick));
-		SDL_RenderPresent(window.renderer);
+		//SDL_RenderPresent(window.renderer);
 		//std::cout << window.GetFps() << std::endl;
 
 	}

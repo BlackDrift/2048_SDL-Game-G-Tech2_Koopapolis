@@ -27,7 +27,6 @@ Window::Window()
 		std::cout << "Erreur SDL_CreateRenderer :" << SDL_GetError() << std::endl;
 		exit(1);
 	}
-	SDL_GetWindowPosition(this->window, &this->x, &this->y);
 	this->running = true;
 	this->map = new Map(this->renderer);
 	this->event;
@@ -46,16 +45,20 @@ float	Window::GetFps()
 
 void	Window::Update()
 {
+	this->ClearRender();
 	this->Render();
 	SDL_RenderPresent(this->renderer);
-	//this->ClearRender();
 }
 
 void	Window::Render()
 {
 	for (int i = 0; i < this->map->squareSize; ++i)
 	{
-		SDL_RenderCopy(this->renderer, this->map->mContent.at(i).objTexture, NULL, &this->map->mContent.at(i).tRect);
+		this->map->mContent.at(i)->tRect.w = 225;
+		this->map->mContent.at(i)->tRect.h = 225;
+		this->map->mContent.at(i)->tRect.x = 225 * (this->map->mContent.at(i)->x - 1);
+		this->map->mContent.at(i)->tRect.y = 225 * (this->map->mContent.at(i)->y - 1);
+		SDL_RenderCopy(this->renderer, this->map->mContent.at(i)->objTexture, NULL, &this->map->mContent.at(i)->tRect);
 	}
 }
 

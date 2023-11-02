@@ -12,23 +12,23 @@ int	game::GameEvent(int	key, Map *map)
 {
 	switch (key)
 		{
-			case KEY_UP:
+			case (KEY_UP):
 				map->MoveTiles('u');
 				return 0;
 				break;
-			case KEY_DOWN:
+			case (KEY_DOWN):
 				map->MoveTiles('d');
 				return 0;
 				break;
-			case KEY_LEFT:
+			case (KEY_LEFT):
 				map->MoveTiles('l');
 				return 0;
 				break;
-			case KEY_RIGHT:
+			case (KEY_RIGHT):
 				map->MoveTiles('r');
 				return 0;
 				break;
-			case KEY_ESC:
+			case (KEY_ESC):
 				return 1;
 			default:
 				return 0;

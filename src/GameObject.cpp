@@ -3,27 +3,30 @@
 #include <iostream>
 #include "../includes/GameObject.h"
 
-#define IMG_PATH_2		"rsrc/2.bmp"
-#define IMG_PATH_4		"rsrc/4.bmp"
-#define IMG_PATH_8		"rsrc/8.bmp"
-#define IMG_PATH_16		"rsrc/16.bmp"
-#define IMG_PATH_32		"rsrc/32.bmp"
-#define IMG_PATH_64		"rsrc/64.bmp"
-#define IMG_PATH_128	"rsrc/128.bmp"
-#define IMG_PATH_256	"rsrc/256.bmp"
-#define IMG_PATH_512	"rsrc/512.bmp"
-#define IMG_PATH_1024	"rsrc/1024.bmp"
-#define IMG_PATH_2048	"rsrc/2048.bmp"
+#define IMG_PATH_DEFAULT	"rsrc/default.bmp"
+#define IMG_PATH_2			"rsrc/2.bmp"
+#define IMG_PATH_4			"rsrc/4.bmp"
+#define IMG_PATH_8			"rsrc/8.bmp"
+#define IMG_PATH_16			"rsrc/16.bmp"
+#define IMG_PATH_32			"rsrc/32.bmp"
+#define IMG_PATH_64			"rsrc/64.bmp"
+#define IMG_PATH_128		"rsrc/128.bmp"
+#define IMG_PATH_256		"rsrc/256.bmp"
+#define IMG_PATH_512		"rsrc/512.bmp"
+#define IMG_PATH_1024		"rsrc/1024.bmp"
+#define IMG_PATH_2048		"rsrc/2048.bmp"
 
 GameObject::GameObject(SDL_Renderer* ren)
 {
 	this->renderer = ren;
 }
 
-void GameObject::GetSurface(int value)
+SDL_Surface* GameObject::GetSurface(int value)
 {
 	switch (value)
 	{
+	case(0):
+		this->surface = SDL_LoadBMP(IMG_PATH_DEFAULT);
 	case (2):
 		this->surface = SDL_LoadBMP(IMG_PATH_2);
 		break;
@@ -63,9 +66,10 @@ void GameObject::GetSurface(int value)
 		std::cout << "Error SDL_LoadBMP :" << SDL_GetError();
 		exit(1);
 	}
+	return (this->surface);
 }
 
-void GameObject::GetText()
+SDL_Texture* GameObject::GetText()
 {
 	this->texture = SDL_CreateTextureFromSurface(this->renderer, this->surface);
 	SDL_FreeSurface(this->surface);
@@ -74,6 +78,7 @@ void GameObject::GetText()
 		std::cout << "Error SDL_CreateTextureFromSurface :" << SDL_GetError();
 		exit(1);
 	}
+	return (this->texture);
 }
 
 GameObject::~GameObject()
@@ -84,12 +89,9 @@ GameObject::~GameObject()
 Tile::Tile(SDL_Renderer* renderer) : GameObject(renderer)
 {
 	this->value = GetNumber();
-	this->GetSurface(this->value);
-	this->GetText();
-	this->tRect.w = 900 / 4;
-	this->tRect.h = 900 / 4;
-	this->tRect.x = 255 * (this->x - 1);
-	this->tRect.y = 255 * (this->y - 1);
+	this->renderer = renderer;
+	this->surface = this->GetSurface(this->value);
+	this->objTexture = this->GetText();
 }
 
 int Tile::GetNumber()
@@ -108,6 +110,7 @@ void Tile::Evolve()
 void Tile::Reset()
 {
 	this->value = 0;
+	this->GetSurface(this->value);
 }
 
 Tile::~Tile()
