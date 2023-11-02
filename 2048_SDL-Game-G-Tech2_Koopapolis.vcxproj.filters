@@ -15,28 +15,63 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Window.h" />
-    <ClInclude Include="GameObject.h">
+    <ClInclude Include="includes\Window.h" />
+    <ClInclude Include="includes\GameObject.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
+    <ClInclude Include="includes\Game.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Map.h">
+    <ClInclude Include="includes\Map.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="src\Window.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="GameObject.cpp">
+    <ClCompile Include="src\GameObject.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
+    <ClCompile Include="src\Game.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Map.cpp">
+    <ClCompile Include="src\Map.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="rsrc\2.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="rsrc\4.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="rsrc\8.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="rsrc\16.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="rsrc\32.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="rsrc\64.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="rsrc\128.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="rsrc\256.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="rsrc\512.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="rsrc\1024.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="rsrc\2048.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
   </ItemGroup>
 </Project>

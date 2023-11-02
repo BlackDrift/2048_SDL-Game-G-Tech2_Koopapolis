@@ -1,5 +1,2 @@
-﻿  Game.cpp
-  main.cpp
-C:\Users\Julie\Desktop\Projet Cpp\2048_SDL-Game-G-Tech2_Koopapolis\main.cpp(12,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-  Génération de code en cours...
-  2048_SDL-Game-G-Tech2_Koopapolis.vcxproj -> C:\Users\Julie\Desktop\Projet Cpp\2048_SDL-Game-G-Tech2_Koopapolis\x64\Debug\2048_SDL-Game-G-Tech2_Koopapolis.exe
+﻿  Window.cpp
+  2048_SDL-Game-G-Tech2_Koopapolis.vcxproj -> C:\Users\Julie\source\repos\BlackDrift\2048_SDL-Game-G-Tech2_Koopapolis\x64\Debug\2048_SDL-Game-G-Tech2_Koopapolis.exe

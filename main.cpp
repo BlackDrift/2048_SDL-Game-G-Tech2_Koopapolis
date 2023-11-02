@@ -3,17 +3,17 @@
 #include <time.h>
 #include <conio.h>
 #include <Windows.h>
-#include "Window.h"
-#include "Map.h"
-#include "Game.h"
+#include "includes/Window.h"
+#include "includes/Map.h"
+#include "includes/Game.h"
 
 int	main(int argc, char** argv)
 {
-	srand(time(0));
+	srand((unsigned int)time(0));;
 	Window	window;
 
-	window.content->SpawnTile();
-	window.content->SpawnTile();
+	window.map->SpawnTile();
+	window.map->SpawnTile();
 	while (window.running)
 	{
 		window.starting_tick = SDL_GetTicks();
@@ -23,14 +23,15 @@ int	main(int argc, char** argv)
 				window.running = false;
 			if (window.event.type == SDL_KEYDOWN)
 			{
-				if (game::GameEvent(window.event.key.keysym.sym, window.content) == 1)
+				if (game::GameEvent(window.event.key.keysym.sym, window.map) == 1)
 					window.running = false;
 			}
-			if (window.content->CheckIsDone())
+			if (window.map->CheckIsDone())
 			{
 				std::cout << std::endl << std::endl << "Game Over" << std::endl;
 				window.running = false;
 			}
+			window.Update();
 			Sleep(100);
 
 			break;

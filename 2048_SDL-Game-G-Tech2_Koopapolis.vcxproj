@@ -132,17 +132,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GameObject.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Map.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="src\Map.cpp" />
+    <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="includes\Game.h" />
+    <ClInclude Include="includes\GameObject.h" />
+    <ClInclude Include="includes\Map.h" />
+    <ClInclude Include="includes\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="rsrc\1024.bmp" />
+    <Image Include="rsrc\128.bmp" />
+    <Image Include="rsrc\16.bmp" />
+    <Image Include="rsrc\2.bmp" />
+    <Image Include="rsrc\2048.bmp" />
+    <Image Include="rsrc\256.bmp" />
+    <Image Include="rsrc\32.bmp" />
+    <Image Include="rsrc\4.bmp" />
+    <Image Include="rsrc\512.bmp" />
+    <Image Include="rsrc\64.bmp" />
+    <Image Include="rsrc\8.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
