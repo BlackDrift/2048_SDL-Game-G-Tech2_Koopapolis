@@ -11,6 +11,7 @@ int	main(int argc, char** argv)
 {
 	srand((unsigned int)time(0));;
 	Window	window;
+	window.map->isWon = false;
 
 	while (window.running)
 	{
@@ -29,17 +30,14 @@ int	main(int argc, char** argv)
 				std::cout << std::endl << std::endl << "Game Over" << std::endl;
 				window.running = false;
 			}
-			window.Update();
 			Sleep(100);
 			break;
 		}
-		//std::cout << window.map->mContent.at(3).value << std::endl;
-		//SDL_GetWindowPosition(window.window, &window.x, &window.y);
-		//if ((1000 / window.fpsmax) > SDL_GetTicks() - window.starting_tick)
-			//SDL_Delay(1000 / window.fpsmax - (SDL_GetTicks() - window.starting_tick));
-		//SDL_RenderPresent(window.renderer);
-		//std::cout << window.GetFps() << std::endl;
-
+		window.Update();
+		if ((1000 / window.fpsmax) > SDL_GetTicks() - window.starting_tick)
+			SDL_Delay(1000 / window.fpsmax - (SDL_GetTicks() - window.starting_tick));
 	}
+	//if (window.map->isWon)
+		//window.Victory();
 	return 0;
 }

@@ -12,7 +12,6 @@ Map::Map(SDL_Renderer* renderer)
 	{
 		for (int j = 0; j < size; ++j)
 		{
-
 			Tile* tile = new Tile(renderer);
 			tile->x = i + 1;
 			tile->y = j + 1;

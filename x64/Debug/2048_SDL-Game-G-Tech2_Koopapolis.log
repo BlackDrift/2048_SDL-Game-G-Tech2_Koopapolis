@@ -1,1 +1,5 @@
-﻿  2048_SDL-Game-G-Tech2_Koopapolis.vcxproj -> C:\Users\Julie\Desktop\Projet Cpp\2048_SDL-Game-G-Tech2_Koopapolis\x64\Debug\2048_SDL-Game-G-Tech2_Koopapolis.exe
+﻿  main.cpp
+C:\Users\Julie\Desktop\Projet Cpp\2048_SDL-Game-G-Tech2_Koopapolis\main.cpp(38,35): warning C4244: 'argument' : conversion de 'float' en 'Uint32', perte possible de données
+  Window.cpp
+  Génération de code en cours...
+  2048_SDL-Game-G-Tech2_Koopapolis.vcxproj -> C:\Users\Julie\Desktop\Projet Cpp\2048_SDL-Game-G-Tech2_Koopapolis\x64\Debug\2048_SDL-Game-G-Tech2_Koopapolis.exe

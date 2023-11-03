@@ -33,9 +33,9 @@ public:
 	Window();
 	~Window();
 
-	float	GetFps();
 	void	Update();
 	void	Render();
+//	void	Victory();
 
 private:
 

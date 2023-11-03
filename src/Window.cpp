@@ -4,6 +4,8 @@
 #include "../includes/Window.h"
 #include "../includes/Map.h"
 
+#define VICTORY_SCREEN_PATH "rsrc/victory.bmp"
+
 Window::Window()
 {
 	this->height = 900;
@@ -33,31 +35,30 @@ Window::Window()
 	this->fpsmax = 60.0;
 }
 
-float	Window::GetFps()
-{
-	this->frame_tick = SDL_GetTicks() - this->starting_tick;
-	if (frame_tick > 0)
-		this->fps = 1000.0f / this->frame_tick;
-	else
-		this->fps = 0.0f;
-	return fps;
-}
-
 void	Window::Update()
 {
 	this->ClearRender();
 	this->Render();
 	SDL_RenderPresent(this->renderer);
 }
-
+/*
+void	Window::Victory()
+{
+	GameObject* victoryscreen = new GameObject(this->renderer);
+	victoryscreen->surface = SDL_LoadBMP(VICTORY_SCREEN_PATH);
+	victoryscreen->texture
+	this->ClearRender();
+	SDL_RenderCopy(this->renderer, this->, NULL, &this->map->mContent.at(i)->tRect);
+}
+*/
 void	Window::Render()
 {
 	for (int i = 0; i < this->map->squareSize; ++i)
 	{
 		this->map->mContent.at(i)->tRect.w = 225;
 		this->map->mContent.at(i)->tRect.h = 225;
-		this->map->mContent.at(i)->tRect.x = 225 * (this->map->mContent.at(i)->x - 1);
-		this->map->mContent.at(i)->tRect.y = 225 * (this->map->mContent.at(i)->y - 1);
+		this->map->mContent.at(i)->tRect.x = 225 * (this->map->mContent.at(i)->y - 1);
+		this->map->mContent.at(i)->tRect.y = 225 * (this->map->mContent.at(i)->x - 1);
 		SDL_RenderCopy(this->renderer, this->map->mContent.at(i)->objTexture, NULL, &this->map->mContent.at(i)->tRect);
 	}
 }

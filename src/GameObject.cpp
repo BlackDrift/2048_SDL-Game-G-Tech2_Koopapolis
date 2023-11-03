@@ -25,7 +25,7 @@ SDL_Surface* GameObject::GetSurface(int value)
 {
 	switch (value)
 	{
-	case(0):
+	case (0):
 		this->surface = SDL_LoadBMP(IMG_PATH_DEFAULT);
 		break;
 	case (2):
@@ -103,8 +103,9 @@ int	Tile::GetValue()
 void Tile::SetValue(int value)
 {
 	this->value = value;
-	this->GetSurface(value);
-	this->GetText();
+	SDL_DestroyTexture(this->objTexture);
+	this->surface = this->GetSurface(value);
+	this->objTexture = this->GetText();
 }
 
 void Tile::Evolve()
