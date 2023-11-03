@@ -83,4 +83,9 @@
       <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="rsrc\music.wav">
+      <Filter>Fichiers de ressources</Filter>
+    </Media>
+  </ItemGroup>
 </Project>
