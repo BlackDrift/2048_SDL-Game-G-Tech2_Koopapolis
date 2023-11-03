@@ -31,16 +31,10 @@ int	main(int argc, char** argv)
 			if (window.event.type == SDL_QUIT)
 				window.running = false;
 			if (window.event.type == SDL_KEYDOWN)
-			{
 				if (game::GameEvent(window.event.key.keysym.sym, window.map) == 1)
 					window.running = false;
-			}
 			if (window.map->CheckIsDone())
-			{
-				std::cout << std::endl << std::endl << "Game Over" << std::endl;
 				window.running = false;
-			}
-			Sleep(100);
 			break;
 		}
 		window.Update();

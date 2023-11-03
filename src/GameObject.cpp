@@ -73,7 +73,7 @@ SDL_Surface* GameObject::GetSurface(int value)
 SDL_Texture* GameObject::GetText()
 {
 	this->texture = SDL_CreateTextureFromSurface(this->renderer, this->surface);
-	SDL_FreeSurface(this->surface);
+	SDL_FreeSurface(this->surface); // We free surface in order to only use texture next
 	if (this->texture == NULL)
 	{
 		std::cout << "Error SDL_CreateTextureFromSurface :" << SDL_GetError();
@@ -87,9 +87,13 @@ GameObject::~GameObject()
 	SDL_DestroyTexture(this->texture);
 }
 
+// We initialize Tile with her value,her size on the canva and texture
+
 Tile::Tile(SDL_Renderer* renderer) : GameObject(renderer)
 {
 	this->value = 0;
+	this->tRect.w = 225;
+	this->tRect.h = 225;
 	this->renderer = renderer;
 	this->surface = this->GetSurface(this->value);
 	this->objTexture = this->GetText();
@@ -100,10 +104,13 @@ int	Tile::GetValue()
 	return (this->value);
 }
 
+// New value so new texture
+
 void Tile::SetValue(int value)
 {
 	this->value = value;
-	SDL_DestroyTexture(this->objTexture);
+	if (this->objTexture)
+		SDL_DestroyTexture(this->objTexture);
 	this->surface = this->GetSurface(value);
 	this->objTexture = this->GetText();
 }

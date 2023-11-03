@@ -73,17 +73,19 @@ void	Window::Lost()
 	SDL_Delay(10000);
 }
 
+//We assigne position on the canva based on the index and add the textures to the canva
+
 void	Window::Render()
 {
 	for (int i = 0; i < this->map->squareSize; ++i)
 	{
-		this->map->mContent.at(i)->tRect.w = 225;
-		this->map->mContent.at(i)->tRect.h = 225;
 		this->map->mContent.at(i)->tRect.x = 225 * (this->map->mContent.at(i)->y - 1);
 		this->map->mContent.at(i)->tRect.y = 225 * (this->map->mContent.at(i)->x - 1);
 		SDL_RenderCopy(this->renderer, this->map->mContent.at(i)->objTexture, NULL, &this->map->mContent.at(i)->tRect);
 	}
 }
+
+//We set drawing color to black and fill the canva to clear it
 
 void	Window::ClearRender()
 {

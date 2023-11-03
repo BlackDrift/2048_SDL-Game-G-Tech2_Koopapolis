@@ -1,6 +1,7 @@
+#include <iostream>
 #include "../includes/Map.h"
 #include "../includes/GameObject.h"
-#include <iostream>
+
 
 
 Map::Map(SDL_Renderer* renderer)

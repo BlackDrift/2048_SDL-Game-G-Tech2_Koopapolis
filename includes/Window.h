@@ -10,9 +10,9 @@ class Window
 {
 private:
 
-	int				width;
-	int				height;
-	const char*		title;
+	int					width;
+	int					height;
+	const char*			title;
 
 public:
 
@@ -21,24 +21,24 @@ public:
 	bool				running;
 	Map*				map;
 
-	Uint32			starting_tick;
-	Uint32			frame_tick;
-	float			fps;
-	float			fpsmax;
+	Uint32				starting_tick;
+	Uint32				frame_tick;
+	float				fps;
+	float				fpsmax;
 
-	SDL_Window*		window;
-	SDL_Renderer*	renderer;
-	SDL_Event		event;
+	SDL_Window*			window;
+	SDL_Renderer*		renderer;
+	SDL_Event			event;
 
 	Window();
 	~Window();
 
-	void	Update();
-	void	Render();
-	void	Victory();
-	void	Lost();
+	void				Update();
+	void				Render();
+	void				Victory();
+	void				Lost();
 
 private:
 
-	void	ClearRender();
+	void				ClearRender();
 };

@@ -1,6 +1,6 @@
- #include "../includes/Map.h"
-#include "../includes/Game.h"
 #include <SDL.h>
+#include "../includes/Map.h"
+#include "../includes/Game.h"
 
 #define KEY_UP SDLK_UP
 #define KEY_DOWN SDLK_DOWN
