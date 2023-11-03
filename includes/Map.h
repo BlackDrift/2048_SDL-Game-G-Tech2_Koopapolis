@@ -14,6 +14,7 @@ public:
 	int					size;
 	int					squareSize;
 	bool				isWon;
+	bool				isLost;
 	std::vector<Tile*>	mContent;
 
 	//Constructor

@@ -79,5 +79,8 @@
     <Image Include="rsrc\victory.bmp">
       <Filter>Fichiers de ressources</Filter>
     </Image>
+    <Image Include="rsrc\lost.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -35,7 +35,8 @@ public:
 
 	void	Update();
 	void	Render();
-//	void	Victory();
+	void	Victory();
+	void	Lost();
 
 private:
 

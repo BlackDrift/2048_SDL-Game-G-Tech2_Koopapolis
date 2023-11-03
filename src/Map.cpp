@@ -60,7 +60,10 @@ bool	Map::CheckIsDone()
 		if (this->mContent.at(i)->GetValue() == 0)
 			return false;
 		else if (this->mContent.at(i)->GetValue() == 2048 && !this->isWon)
+		{
 			this->isWon = true;
+			return (true);
+		}
 	}
 	for (int i = 0; i < this->squareSize; ++i)
 	{
@@ -69,6 +72,7 @@ bool	Map::CheckIsDone()
 		if (this->CanEvolve('0', this->mContent.at(i)))
 			return false;
 	}
+	this->isLost = true;
 	return true;
 }
 

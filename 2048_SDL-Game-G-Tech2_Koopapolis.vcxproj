@@ -157,6 +157,7 @@
     <Image Include="rsrc\64.bmp" />
     <Image Include="rsrc\8.bmp" />
     <Image Include="rsrc\default.bmp" />
+    <Image Include="rsrc\lost.bmp" />
     <Image Include="rsrc\victory.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

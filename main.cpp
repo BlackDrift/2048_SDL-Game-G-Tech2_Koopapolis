@@ -37,7 +37,9 @@ int	main(int argc, char** argv)
 		if ((1000 / window.fpsmax) > SDL_GetTicks() - window.starting_tick)
 			SDL_Delay(1000 / window.fpsmax - (SDL_GetTicks() - window.starting_tick));
 	}
-	//if (window.map->isWon)
-		//window.Victory();
+	if (window.map->isWon)
+		window.Victory();
+	else if (window.map->isLost)
+		window.Lost();
 	return 0;
 }

@@ -5,6 +5,7 @@
 #include "../includes/Map.h"
 
 #define VICTORY_SCREEN_PATH "rsrc/victory.bmp"
+#define LOST_SCREEN_PATH "rsrc/lost.bmp"
 
 Window::Window()
 {
@@ -41,16 +42,37 @@ void	Window::Update()
 	this->Render();
 	SDL_RenderPresent(this->renderer);
 }
-/*
+
 void	Window::Victory()
 {
 	GameObject* victoryscreen = new GameObject(this->renderer);
 	victoryscreen->surface = SDL_LoadBMP(VICTORY_SCREEN_PATH);
-	victoryscreen->texture
+	victoryscreen->texture = victoryscreen->GetText();
+	victoryscreen->tRect.x = 0;
+	victoryscreen->tRect.y = 0;
+	victoryscreen->tRect.w = 900;
+	victoryscreen->tRect.h = 900;
 	this->ClearRender();
-	SDL_RenderCopy(this->renderer, this->, NULL, &this->map->mContent.at(i)->tRect);
+	SDL_RenderCopy(this->renderer, victoryscreen->texture, NULL, &victoryscreen->tRect);
+	SDL_RenderPresent(this->renderer);
+	SDL_Delay(10000);
 }
-*/
+
+void	Window::Lost()
+{
+	GameObject* lostscreen = new GameObject(this->renderer);
+	lostscreen->surface = SDL_LoadBMP(LOST_SCREEN_PATH);
+	lostscreen->texture = lostscreen->GetText();
+	lostscreen->tRect.x = 0;
+	lostscreen->tRect.y = 0;
+	lostscreen->tRect.w = 900;
+	lostscreen->tRect.h = 900;
+	this->ClearRender();
+	SDL_RenderCopy(this->renderer, lostscreen->texture, NULL, &lostscreen->tRect);
+	SDL_RenderPresent(this->renderer);
+	SDL_Delay(10000);
+}
+
 void	Window::Render()
 {
 	for (int i = 0; i < this->map->squareSize; ++i)

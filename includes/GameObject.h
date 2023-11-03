@@ -10,6 +10,8 @@ public:
 
 	SDL_Renderer*	renderer;
 	SDL_Surface*	surface;
+	SDL_Texture*	texture;
+	SDL_Rect		tRect;
 
 	GameObject(SDL_Renderer* ren);
 
@@ -18,9 +20,6 @@ public:
 
 	SDL_Surface*	GetSurface(int value);
 	SDL_Texture*	GetText();
-
-private:
-	SDL_Texture*		texture;
 };
 
 class Tile : GameObject
